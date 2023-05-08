@@ -1,0 +1,96 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="insert_expert">
+  <div align="center">
+    <table class="table table-striped">
+      <tr>
+        <th width="201" scope="row"><div align="center">First Name </div></th>
+        <td width="156"><label>
+          <div align="center">
+            <input type="text" name="textfield"  class="form-control" required pattern="[A-Z a-z.]{3,25}"/>
+            </div>
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row"><div align="center">Last Name </div></th>
+        <td><label>
+          <div align="center">
+            <input type="text" name="textfield2" class="form-control" required pattern="[A-Z a-z.]{3,25}"/>
+            </div>
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row"><div align="center">Place</div></th>
+        <td><label>
+          <div align="center">
+            <input type="text" name="textfield3" class="form-control" required pattern="[A-Z a-z.]{3,25}"/>
+            </div>
+        </label></td>
+      </tr><tr>
+        <th scope="row"><div align="center">Post</div></th>
+        <td><label>
+          <div align="center">
+            <input type="text" name="textfield31" class="form-control" required pattern="[A-Z a-z.]{3,25}"/>
+            </div>
+        </label></td>
+      </tr><tr>
+        <th scope="row"><div align="center">Pin</div></th>
+        <td><label>
+          <div align="center">
+            <input type="text" name="textfield32" class="form-control" required pattern="[0-9]{6}"/>
+            </div>
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row"><div align="center">Email</div></th>
+        <td><label>
+          <div align="center">
+            <input type="text" name="textfield4" class="form-control" required pattern="[a-z0-9._%+-]+@[a-z0-9]+\.[a-z]{2,3}"/>
+            </div>
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row"><div align="center">Phone</div></th>
+        <td><label>
+          <div align="center">
+            <input type="text" name="textfield5" class="form-control" required pattern="[6789][0-9]{9}"/>
+            </div>
+        </label></td>
+      </tr><tr>
+        <th scope="row"><div align="center">Area</div></th>
+        <td><label>
+          <div align="center">
+            <input type="text" name="textfield8" class="form-control"/>
+            </div>
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row"><div align="center">Username</div></th>
+        <td><label>
+          <div align="center">
+            <input type="text" name="textfield6" class="form-control"/>
+            </div>
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row"><div align="center">Password</div></th>
+        <td><label>
+          <div align="center">
+            <input type="text" name="textfield7" class="form-control" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/>
+            </div>
+        </label></td>
+      </tr>
+      <tr>
+         <tr align="center">
+      <td colspan="6"><label>
+            <input type="submit" name="Submit" value="Add" class="btn btn-info"/>
+          </div>
+        </label>      </td>
+      </tr>
+      </table>
+  </div>
+</form>
+</body>
+</html>
+{% endblock %}

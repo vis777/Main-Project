@@ -1,0 +1,28 @@
+{% extends 'expertindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="addsuggestions#about">
+  <table class="table table-striped">
+    <tr>
+      <th scope="col">Suggestion</th>
+      <th scope="col">Description</th>
+      <th scope="col">&nbsp;</th>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>{{i['Suggestions']}}</td>
+      <td>{{i['Description']}}</td>
+      <td><a href="deletesuggestions?id={{i['Sid']}}" class="btn btn-danger">Delete</a></td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td colspan="3"><label>
+        <input type="submit" name="Submit" value="Add" class="btn btn-info"/>
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}
+

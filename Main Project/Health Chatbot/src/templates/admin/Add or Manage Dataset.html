@@ -1,0 +1,28 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="adddataset#about">
+  <table class="table table-striped">
+    <tr>
+      <th width="81" scope="row">Question</th>
+      <th width="57"><strong>Answer</strong></th>
+      <td width="40">&nbsp;</td>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <th scope="row">{{i['Question']}}</th>
+      <td>{{i['Answer']}}</td>
+      <td><a href="deletedataset?id={{i['Dataid']}}" class="btn btn-danger">Delete</a></td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <th colspan="3" scope="row"><label>
+        <input type="submit" name="Submit" value="Add" class="btn btn-info"/>
+      </label></th>
+    </tr>
+  </table>
+  <label></label>
+</form>
+</body>
+</html>
+{% endblock %}

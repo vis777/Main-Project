@@ -1,0 +1,25 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="insert_disease">
+ <table class="table table-striped">
+    <tr>
+      <th scope="row">Disease</th>
+      <td><label>
+        <input type="text" name="textfield" required pattern="[A-Z a-z.]{3,25}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><label>
+          <div align="center">
+        <input type="submit" name="Submit" value="Add" class="btn btn-info"/>
+      </label></th>
+    </tr>
+  </table>
+</form>
+</div>
+  <label></label>
+</form>
+</body>
+</html>
+{% endblock %}

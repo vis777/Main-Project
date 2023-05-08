@@ -1,0 +1,38 @@
+{% extends 'userindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="sendrate">
+  <table class="table table-striped">
+    <tr>
+      <th scope="row">Expert Name </th>
+      <td><label>
+        <select name="select">
+          {% for i in val %}
+          <option value="{{i['lid']}}">{{i['Fname']}} {{i['Lname']}}</option>
+          {% endfor %}
+        </select>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Rating</th>
+      <td><label>
+        <select name="select2">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </label></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><label>
+        <input type="submit" name="Submit" value="Send" class="btn btn-info"/>
+      </label></th>
+    </tr>
+  </table>
+  <label></label>
+</form>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="adddisease#about">
+  <table class="table table-striped">
+    <tr>
+      <th width="139" scope="row">Name</th>
+      <td width="45">&nbsp;</td>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <th scope="row">{{i['disease']}}</th>
+      <td><a href="deletedisease?id={{i['Did']}}" class="btn btn-danger">Delete</a></td>
+    </tr>
+    {% endfor %}
+
+    <tr>
+      <th colspan="2" scope="row"><label>
+        <input type="submit" name="Submit" value="Add" class="btn btn-info"/>
+      </label></th>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

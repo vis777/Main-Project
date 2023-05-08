@@ -1,0 +1,21 @@
+{% extends 'expertindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-striped">
+    <tr>
+      <th scope="row">Username</th>
+      <td>&nbsp;</td>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <th scope="row">{{i['Fname']}} {{i['Lname']}}&nbsp;{{i['c']}}</th>
+     <td><p><a href="chat22?uid={{i['lid']}}" class="btn btn-primary">Chat</a></p>
+    </tr>
+    {% endfor %}
+  </table>
+  <label></label>
+</form>
+</body>
+</html>
+{% endblock %}

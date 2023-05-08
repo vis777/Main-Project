@@ -1,0 +1,29 @@
+{% extends 'userindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="">
+ <table class="table table-striped">
+    <tr>
+      <th scope="col">First Name </th>
+      <th scope="col">Last Name </th>
+      <th scope="col">Phone</th>
+      <th scope="col">Email</th>
+      <th scope="col">Area</th>
+      <th scope="col">&nbsp;</th>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>{{i['Fname']}}</td>
+      <td>{{i['Lname']}}</td>
+      <td>{{i['Phone']}}</td>
+      <td>{{i['Email']}}</td>
+      <td>{{i['area']}}</td>
+      <td><p><a href="chat2?uid={{i['lid']}}" class="btn btn-primary">Chat</a></p>
+      <p><a href="viewsuggestion?id={{i['lid']}}" class="btn btn-info">Suggestions</a></p></td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}
