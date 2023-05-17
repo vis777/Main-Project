@@ -1,12 +1,12 @@
 {% extends 'adminindex.html' %}
 {% block body %}
 <body>
-<form id="form1" name="form1" method="post" action="reply">
+<form id="form1" name="form1" method="post" action="sndreply#about">
   <table class="table table-striped">
     <tr>
       <th width="97" scope="row">Reply</th>
       <td width="87"><label>
-        <input type="text" name="textfield" required pattern="[A-Z a-z.]{3,25}"/>
+        <input type="text" name="textfield" />
       </label></td>
     </tr>
     <tr>

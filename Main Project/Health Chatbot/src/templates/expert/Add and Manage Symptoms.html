@@ -10,8 +10,8 @@
     </tr>
     {% for i in val %}
     <tr>
-      <td>{{i['disease']}}</td>
-      <td>{{i['symptom']}}</td>
+      <td>{{i['Name']}}</td>
+      <td>{{i['Symptoms']}}</td>
       <td><a href="deletesymptoms?id={{i['Sid']}}" class="btn btn-danger">Delete</a></td>
     </tr>
     {% endfor %}

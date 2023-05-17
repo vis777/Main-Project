@@ -8,7 +8,7 @@
         <th width="201" scope="row"><div align="center">First Name </div></th>
         <td width="156"><label>
           <div align="center">
-            <input type="text" name="textfield" value="{{val['Fname']}}" required pattern="[A-Z a-z.]{3,25}"/>
+            <input type="text" name="textfield" value="{{val['Fname']}}"/>
             </div>
         </label></td>
       </tr>
@@ -16,7 +16,7 @@
         <th scope="row"><div align="center">Last Name </div></th>
         <td><label>
           <div align="center">
-            <input type="text" name="textfield2" value="{{val['Lname']}}" required pattern="[A-Z a-z.]{3,25}"/>
+            <input type="text" name="textfield2" value="{{val['Lname']}}"/>
             </div>
         </label></td>
       </tr>
@@ -24,21 +24,21 @@
         <th scope="row"><div align="center">Place</div></th>
         <td><label>
           <div align="center">
-            <input type="text" name="textfield3" value="{{val['Place']}}" pattern="[A-Z a-z.]{3,25}"/>
+            <input type="text" name="textfield3" value="{{val['Place']}}"/>
             </div>
         </label></td>
       </tr><tr>
         <th scope="row"><div align="center">Post</div></th>
         <td><label>
           <div align="center">
-            <input type="text" name="textfield31" value="{{val['Post']}}" pattern="[A-Z a-z.]{3,25}"/>
+            <input type="text" name="textfield31" value="{{val['Post']}}"/>
             </div>
         </label></td>
       </tr><tr>
         <th scope="row"><div align="center">Pin</div></th>
         <td><label>
           <div align="center">
-            <input type="text" name="textfield32" value="{{val['Pin']}}" required pattern="[0-9]{6}"/>
+            <input type="text" name="textfield32" value="{{val['Pin']}}"/>
             </div>
         </label></td>
       </tr>
@@ -46,7 +46,7 @@
         <th scope="row"><div align="center">Email</div></th>
         <td><label>
           <div align="center">
-            <input type="text" name="textfield4" value="{{val['Email']}}" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}"/>
+            <input type="text" name="textfield4" value="{{val['Email']}}"/>
             </div>
         </label></td>
       </tr>
@@ -54,7 +54,7 @@
         <th scope="row"><div align="center">Phone</div></th>
         <td><label>
           <div align="center">
-            <input type="text" name="textfield5" value="{{val['Phone']}}" required pattern="[6789][0-9]{9}"/>
+            <input type="text" name="textfield5" value="{{val['Phone']}}"/>
             </div>
         </label></td>
       </tr>
@@ -62,15 +62,15 @@
         <th scope="row"><div align="center">Area</div></th>
         <td><label>
           <div align="center">
-            <input type="text" name="textfield8" value="{{val['area']}}" required pattern="[A-Z a-z.]{3,25}"/>
+            <input type="text" name="textfield8" value="{{val['area']}}"/>
             </div>
         </label></td>
       </tr>
       <tr>
-      <tr align="center">
-      <td colspan="6">
-        <input type="submit" name="Submit" value="Edit" class="btn btn-info"/>
-        <label>
+        <th colspan="2" scope="row"> <label>
+          <div align="center">
+            <input type="submit" name="Submit" value="EDIT" />
+          </div>
         </label>      </th>
       </tr>
       </table>

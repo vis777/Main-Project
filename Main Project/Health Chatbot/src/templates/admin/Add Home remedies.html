@@ -9,7 +9,7 @@
       <td><label>
         <select name="select">
           {% for i in val %}
-          <option value="{{i['Did']}}">{{i['disease']}}</option>
+          <option value="{{i['Did']}}">{{i['Name']}}</option>
           {% endfor %}
         </select>
       </label></td>
@@ -17,18 +17,18 @@
     <tr>
       <th scope="row">Name</th>
       <td><label>
-        <input type="text" name="textfield" required pattern="[A-Z a-z.]{3,25}" />
+        <input type="text" name="textfield" />
       </label></td>
     </tr>
     <tr>
       <th scope="row">Remedy</th>
       <td><label>
-        <input type="text" name="textfield2" required pattern="[A-Z a-z.]{3,25}" />
+        <input type="text" name="textfield2" />
       </label></td>
     </tr>
     <tr>
       <th height="28" colspan="2" scope="row"><label>
-        <input type="submit" name="Submit" value="Add" class="btn btn-info"/>
+        <input type="submit" name="Submit" value="Add" />
       </label></th>
     </tr>
   </table>

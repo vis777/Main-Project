@@ -8,7 +8,7 @@ from src.myknn import *
 import smtplib
 from email.mime.text import MIMEText
 from flask_mail import Mail
-from src.chatbot import *
+
 app.secret_key="8989"
 import functools
 
@@ -60,17 +60,9 @@ def login():
         return '''<script>alert('success');window.location="/home"</script>'''
     elif res['type']=='user':
         session['lid'] = res['lid']
-        qry="select *from user where lid=%s"
-        res=selectone(qry,session['lid'])
-        name=res['Fname']+" "+res['Lname']
-        session['name']=name
         return '''<script>alert('success');window.location="/user_home"</script>'''
     elif res['type'] == 'expert':
         session['lid']=res['lid']
-        qry = "select * from expert where lid=%s"
-        res = selectone(qry, session['lid'])
-        name = res['Fname'] + " " + res['Lname']
-        session['name'] = name
         return '''<script>alert('success');window.location="/expert_home"</script>'''
     else:
      return '''<script>alert('invalid');window.location="/"</script>'''
@@ -274,7 +266,7 @@ def insert_dataset():
 @app.route('/addormanagehomeremedies')
 @login_required
 def addormanagehomeremedies():
-    qry = "SELECT disease.`disease`AS dname,`home remedies`.* FROM `home remedies`JOIN `disease` ON `disease`.`Did`=`home remedies`.`Did`"
+    qry = "SELECT disease.`Name`AS dname,`home remedies`.* FROM `home remedies`JOIN `disease` ON `disease`.`Did`=`home remedies`.`Did`"
     res =selectall(qry)
     return  render_template('admin/Add or Manage Home Remedies.html', val=res)
 
@@ -393,7 +385,7 @@ def insert_suggestions():
 @app.route('/addandmanagesymptoms')
 @login_required
 def addandmanagesymptoms():
-    qry="SELECT * FROM`disease`JOIN `symptoms` ON `symptoms`.disease_id=`disease`.disease_id"
+    qry="SELECT * FROM`disease`JOIN `symptoms` ON `symptoms`.Did=`disease`.Did"
     res=selectall(qry)
     return  render_template('expert/Add and Manage Symptoms.html',val=res)
 
@@ -434,18 +426,7 @@ def addsymptoms():
 def chatwithuser():
     qry="SELECT *FROM `user`"
     res=selectall(qry)
-    result=[]
-    for i in res:
-        qry="SELECT * FROM `chat` WHERE `fromid`=%s AND `toid`=%s AND `status`='pending'"
-        val=(i['lid'],session['lid'])
-        rr=selectall2(qry,val)
-        if len(rr)==0:
-            i['c']=""
-        else:
-            i['c']="("+str(len(rr))+")"
-        result.append(i)
-
-    return  render_template('expert/Chat with User.html',val=result)
+    return  render_template('expert/Chat with User.html',val=res)
 
 @app.route('/expert_home')
 @login_required
@@ -667,7 +648,7 @@ def sendchat():
     message=request.form['textarea']
     to_id = session['pid']
     from_id = session['lid']
-    qry="insert into chat values(null,%s,%s,%s,CURDATE(),'pending')"
+    qry="insert into chat values(null,%s,%s,%s,CURDATE())"
     val=(message,from_id,to_id)
     iud(qry,val)
 
@@ -754,8 +735,6 @@ def chatspl():
     session['pid']=pid
     qry="SELECT * FROM `user` WHERE `lid`=%s"
     res=selectone(qry,pid)
-    qry="UPDATE `chat` SET `status`='viewed' WHERE `fromid`=%s AND `toid`=%s"
-    iud(qry,(pid,session['lid']))
 
 
     print(res)
@@ -778,7 +757,7 @@ def sendchatt():
     message=request.form['textarea']
     to_id = session['pid']
     from_id = session['lid']
-    qry="insert into chat values(null,%s,%s,%s,CURDATE(),'pending')"
+    qry="insert into chat values(null,%s,%s,%s,CURDATE())"
     val=(message,from_id,to_id)
     iud(qry,val)
 
@@ -798,44 +777,5 @@ def chatsss():
     lname=res['Lname']
     return render_template("expert/chat2.html",data=res1,fname=fname,lname=lname,fr=session['lid'])
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# ====================================
-@app.route('/insertchatbot',methods=['post'])
-def insertchatbot():
-    qus = request.form['textarea']
-    print(qus)
-    # lid = request.form['lid']
-    # print(lid)
-
-    res = cb(qus)
-
-    qry = "INSERT INTO `chatbot` VALUES(NULL,%s,%s,%s)"
-    val=(session['lid'],qus,res)
-    iud(qry,val)
-    return redirect('/response')
-
-
-@app.route('/response')
-def response():
-
-
-    qry = "SELECT Question,lid,Answer FROM `chatbot` WHERE `lid`=%s"
-    # val=(session['lid'])
-    s = selectall2(qry,session['lid'] )
-    print(s,"kkkkkkkkkkkkkkkkk")
-    return render_template("user/bot.html",data=s,fr=session['lid'])
 
 app.run(debug=True)

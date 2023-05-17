@@ -26,37 +26,29 @@ CREATE TABLE `chat` (
   `fromid` int DEFAULT NULL,
   `toid` int DEFAULT NULL,
   `Date` varchar(100) DEFAULT NULL,
-  `status` varchar(1234) DEFAULT NULL,
   PRIMARY KEY (`Chatid`)
-) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 /*Data for the table `chat` */
 
-insert  into `chat`(`Chatid`,`Chat`,`fromid`,`toid`,`Date`,`status`) values 
-(1,'hi',3,7,'2023-03-23',NULL),
-(2,'hlo',3,7,'2023-03-23',NULL),
-(3,'hh',3,7,'2023-03-23',NULL),
-(4,'hlo',3,7,'2023-03-23',NULL),
-(5,'sd',3,7,'2023-03-23',NULL),
-(6,'hi',2,13,'2023-03-23',NULL),
-(7,'hello',2,13,'2023-03-23',NULL),
-(8,'good morning\r\n',2,3,'2023-03-23',NULL),
-(9,'ok',3,2,'2023-03-23',NULL),
-(10,'  bgbbgv',2,3,'2023-03-27',NULL),
-(11,'bbbn',2,3,'2023-03-27',NULL),
-(12,'OIDXOI\'Qhdx',3,2,'2023-03-27',NULL),
-(13,'gjfgjfx',2,3,'2023-03-27',NULL),
-(14,'hello',3,2,'2023-03-31',NULL),
-(15,'hello',2,3,'2023-03-31',NULL),
-(16,'hy\r\n',3,5,'2023-04-01',NULL),
-(17,'hello',6,2,'2023-04-04',NULL),
-(18,'hi\r\n',7,2,'2023-04-20','viewed'),
-(19,'hello',7,2,'2023-04-12','viewed'),
-(20,'ksdbckjsd',2,7,'2023-04-20','pending'),
-(21,'what',7,2,'2023-04-20','viewed'),
-(22,'is',7,2,'2023-04-20','viewed'),
-(23,'this',7,2,'2023-04-20','viewed'),
-(24,'ok',2,7,'2023-04-20','pending');
+insert  into `chat`(`Chatid`,`Chat`,`fromid`,`toid`,`Date`) values 
+(1,'hi',3,7,'2023-03-23'),
+(2,'hlo',3,7,'2023-03-23'),
+(3,'hh',3,7,'2023-03-23'),
+(4,'hlo',3,7,'2023-03-23'),
+(5,'sd',3,7,'2023-03-23'),
+(6,'hi',2,13,'2023-03-23'),
+(7,'hello',2,13,'2023-03-23'),
+(8,'good morning\r\n',2,3,'2023-03-23'),
+(9,'ok',3,2,'2023-03-23'),
+(10,'  bgbbgv',2,3,'2023-03-27'),
+(11,'bbbn',2,3,'2023-03-27'),
+(12,'OIDXOI\'Qhdx',3,2,'2023-03-27'),
+(13,'gjfgjfx',2,3,'2023-03-27'),
+(14,'hello',3,2,'2023-03-31'),
+(15,'hello',2,3,'2023-03-31'),
+(16,'hy\r\n',3,5,'2023-04-01'),
+(17,'hello',6,2,'2023-04-04');
 
 /*Table structure for table `chatbot` */
 
@@ -64,27 +56,13 @@ DROP TABLE IF EXISTS `chatbot`;
 
 CREATE TABLE `chatbot` (
   `Chid` int NOT NULL AUTO_INCREMENT,
-  `lid` int DEFAULT NULL,
-  `Question` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `Answer` varchar(2000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `Dataid` int DEFAULT NULL,
+  `Reply` varchar(100) DEFAULT NULL,
+  `Send` int DEFAULT NULL,
   PRIMARY KEY (`Chid`)
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 /*Data for the table `chatbot` */
-
-insert  into `chatbot`(`Chid`,`lid`,`Question`,`Answer`) values 
-(1,6,'hello','Sorry, I can not understand the question'),
-(2,6,'Why do I get sick?','When you get sick, part or all of your body is not working as it should. The cause of sickness can c'),
-(3,6,'why do i\r\n','Sorry, I can not understand the question'),
-(4,6,'why do i get sick?','ok'),
-(5,6,'why do i get sick?','When you get sick, part or all of your body is not working as it should. The cause of sickness can c'),
-(6,6,'why do i get sick?','When you get sick, part or all of your body is not working as it should. The cause of sickness can come from inside your body or from the outside world. Diseases that start on the inside are usually inherited in the genes that you receive from your parents, which make up the master plan that determines how your body will grow and run. Abnormal development or functioning of different body systems is the cause of many chronic diseases.  Things in the outside world can cause sickness too. Poisons in the environment can cause illnesses in people. Not eating the right foods, with their important nutrients, can also cause diseases. But the most common cause of sickness from the outside world is infectious agents. These agents are usually microscopic organisms (living things so small that they can only be seen with the help of microscopes) such as bacteria and viruses, commonly referred to as germs. Bacteria and viruses and other microscopic organisms live in the air, water, and soil that mak'),
-(7,6,'Where are some other places that germs hide?','Germs are everywhere! Most germs spread through the air, invading our homes, pets, and family, and sometimes they make us sick. Besides your bathroom toilet and the kitchen sink, everyday items such as shopping carts, restaurant menus, mobile phones, and shower curtains contain germs. These items contain bacteria, mold, and rhinoviruses (instigators of the common cold) that can lead to sickness. In fact, cold and flu viruses can survive for 18 hours on hard surfaces. Common household items can be swabbed with a disinfectant wipe easily before use in order to prevent germs from spreading. Washing your hands with soap and water, using hand sanitizer, and avoiding touching your face with your hands after using these items also helps keep germs away from you. To eliminate dust mites—those little critters that live in your bed sheets and feed on dead skin cells—don’t make your bed for a while. Studies have found that dust mites need humidity levels above 50 percent to survive and cannot liv'),
-(8,6,'Where are some other places that germs hide?','Germs are everywhere! Most germs spread through the air, invading our homes, pets, and family, and sometimes they make us sick. Besides your bathroom toilet and the kitchen sink, everyday items such as shopping carts, restaurant menus, mobile phones, and shower curtains contain germs. These items contain bacteria, mold, and rhinoviruses (instigators of the common cold) that can lead to sickness. In fact, cold and flu viruses can survive for 18 hours on hard surfaces. Common household items can be swabbed with a disinfectant wipe easily before use in order to prevent germs from spreading. Washing your hands with soap and water, using hand sanitizer, and avoiding touching your face with your hands after using these items also helps keep germs away from you. To eliminate dust mites—those little critters that live in your bed sheets and feed on dead skin cells—don’t make your bed for a while. Studies have found that dust mites need humidity levels above 50 percent to survive and cannot live in the arid conditions of an unmade bed.'),
-(9,6,'hello','Sorry, I can not understand the question'),
-(10,6,'Hello','Sorry, I can not understand the question'),
-(11,6,'Why do i get sick','When you get sick, part or all of your body is not working as it should. The cause of sickness can come from inside your body or from the outside world. Diseases that start on the inside are usually inherited in the genes that you receive from your parents, which make up the master plan that determines how your body will grow and run. Abnormal development or functioning of different body systems is the cause of many chronic diseases.  Things in the outside world can cause sickness too. Poisons in the environment can cause illnesses in people. Not eating the right foods, with their important nutrients, can also cause diseases. But the most common cause of sickness from the outside world is infectious agents. These agents are usually microscopic organisms (living things so small that they can only be seen with the help of microscopes) such as bacteria and viruses, commonly referred to as germs. Bacteria and viruses and other microscopic organisms live in the air, water, and soil that make up our world. They are on the things and people we touch and in the food we eat. Many of them are beneficial: bacteria are needed to make cheese, some bacteria help vegetables grow, and some bacteria clean the environment and enrich the soil by feeding on dead plants and animals. But there are other microscopic organisms that invade the bodies of plants and animals—and people—and cause diseases.'),
-(12,6,'dfghj','Sorry, I can not understand the question');
 
 /*Table structure for table `complaint` */
 
@@ -97,7 +75,7 @@ CREATE TABLE `complaint` (
   `Date` varchar(100) DEFAULT NULL,
   `Reply` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`Cid`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 /*Data for the table `complaint` */
 
@@ -106,8 +84,7 @@ insert  into `complaint`(`Cid`,`lid`,`Complaint`,`Date`,`Reply`) values
 (2,3,'gfxgf','2023-03-23','ok'),
 (3,3,'what?','2023-03-27','yeah'),
 (4,6,'why we get cold?','2023-04-03','pending'),
-(5,7,'What are allergies?','2023-04-03',''),
-(6,7,'it is not working?','2023-04-20','pending');
+(5,7,'What are allergies?','2023-04-03','pending');
 
 /*Table structure for table `dataset` */
 
@@ -118,7 +95,7 @@ CREATE TABLE `dataset` (
   `Question` varchar(100) DEFAULT NULL,
   `Answer` varchar(1500) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   PRIMARY KEY (`Dataid`)
-) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 /*Data for the table `dataset` */
 
@@ -220,7 +197,7 @@ CREATE TABLE `expert` (
 insert  into `expert`(`eid`,`lid`,`Fname`,`Lname`,`Place`,`Post`,`Pin`,`Email`,`Phone`,`area`) values 
 (1,2,'Ravi ','kk','kozhikode','345',670045,'ravi1@gmail.com',6789123412,'doctor'),
 (2,3,'Akash','Mishra','Kochi','ernalkode',123,'Akash23@gmail.com',8907654321,'doc'),
-(3,5,'Shyam','Kumar','Thrishur','anakara',567,'shyam2@gmail.com',9899657432,'doct');
+(3,4,'Shyam','Kumar','Thrishur','anakara',567,'shyam2@gmail.com',9899657432,'doct');
 
 /*Table structure for table `home remedies` */
 
@@ -232,14 +209,13 @@ CREATE TABLE `home remedies` (
   `Name` varchar(100) DEFAULT NULL,
   `Remedy` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`Hid`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 /*Data for the table `home remedies` */
 
 insert  into `home remedies`(`Hid`,`Did`,`Name`,`Remedy`) values 
 (1,1,'vishnu','hot water'),
-(2,3,'tablet','paracetamol'),
-(5,0,'','');
+(2,3,'tablet','paracetamol');
 
 /*Table structure for table `login` */
 
@@ -277,7 +253,7 @@ CREATE TABLE `rating` (
   `Date` varchar(100) DEFAULT NULL,
   `lid` int DEFAULT NULL,
   PRIMARY KEY (`Rid`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 /*Data for the table `rating` */
 
@@ -287,9 +263,7 @@ insert  into `rating`(`Rid`,`Eid`,`Rating`,`Date`,`lid`) values
 (3,2,1,'2023-03-23',3),
 (4,5,5,'2023-03-31',3),
 (5,5,4,'2023-04-01',3),
-(6,2,1,'2023-04-01',3),
-(7,2,4,'2023-04-20',7),
-(8,2,5,'2023-04-20',9);
+(6,2,1,'2023-04-01',3);
 
 /*Table structure for table `suggestions` */
 
